@@ -24,6 +24,12 @@ Below is a list of current repositories included in this collection. I will keep
         <th><a href="/project-three">project-three</a></th>
         <th>Basic JavaScript exercises.</th>
     </tr>
+            <th><a href="/project-four">project-four</a></th>
+        <th>Project with Boostrap</th>
+    </tr>
+                <th><a href="/project-five">project-five</a></th>
+        <th>Project Task list with React</th>
+    </tr>
 </table>
 <br>
 
