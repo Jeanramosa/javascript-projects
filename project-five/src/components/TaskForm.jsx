@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-const API_URL = "https://68499ba945f4c0f5ee723110.mockapi.io/tasks";
+import { createTask } from "../services/taskService";
 
 const TaskForm = ({ setTasks }) => {
   const [title, setTitle] = useState("");
@@ -14,19 +13,12 @@ const TaskForm = ({ setTasks }) => {
       title,
       description,
       category,
-      completed: false
+      completed: false,
     };
 
-    const res = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newTask)
-    });
+    const data = await createTask(newTask);
+    setTasks((prev) => [...prev, data]);
 
-    const data = await res.json();
-    setTasks(prev => [...prev, data]);
-
-    // Limpiar el formulario
     setTitle("");
     setDescription("");
     setCategory("actividades");
